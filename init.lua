@@ -1,3 +1,7 @@
+-- Body_Pillow init.lua
+-- Copyright Duane Robertson (duane@duanerobertson.com), 2015
+-- Distributed under the MIT license
+
 local pillow_rightclick = nil
 
 -- if beds is available, this will act like one
