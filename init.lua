@@ -24,6 +24,7 @@ local desc = {
 	paramtype = 'light',
 	inventory_image = 'body_pillow_icon.png',
 	groups = {oddly_breakable_by_hand=1, flammable=2},
+	is_ground_content = false,
 	automatic_rotate = false,
 	walkable = true,
 	selection_box = { type = 'fixed', fixed = {-0.3, -0.5, -0.3, 0.3, -0.3, 1.3}, },
