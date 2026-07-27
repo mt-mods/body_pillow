@@ -20,7 +20,7 @@ local desc = {
 	visual_scale = 1.0,
 	tiles = {"body_pillow_01.png"},
 	use_texture_alpha = "blend",
-	mesh = "body_pillow.b3d",
+	mesh = "body_pillow.glb",
 	paramtype = "light",
 	inventory_image = "body_pillow_icon.png",
 	groups = {oddly_breakable_by_hand = 1, flammable = 2},
@@ -67,11 +67,11 @@ local desc = {
 
 		if p0.x > p1.x then
 			param2 = 49
-		elseif p0.x < p1.x then --
+		elseif p0.x < p1.x then
 			param2 = 15
-		elseif p0.z > p1.z then --
+		elseif p0.z > p1.z then
 			param2 = 8
-		elseif p0.z < p1.z then --
+		elseif p0.z < p1.z then
 			param2 = 30
 		end
 		else
