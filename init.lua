@@ -44,9 +44,9 @@ local desc = {
 		end
 
 		if node and node.name == 'body_pillow:body_pillow' then
-		minetest.swap_node(pos, {name='body_pillow:body_pillow_reversed', param2=node.param2})
+		core.swap_node(pos, {name='body_pillow:body_pillow_reversed', param2=node.param2})
 		else
-		minetest.swap_node(pos, {name='body_pillow:body_pillow', param2=node.param2})
+		core.swap_node(pos, {name='body_pillow:body_pillow', param2=node.param2})
 		end
 	end,
 
@@ -83,7 +83,7 @@ local desc = {
 			y = p1.y - placer_pos.y,
 			z = p1.z - placer_pos.z
 			}
-			param2 = minetest.dir_to_facedir(dir)
+			param2 = core.dir_to_facedir(dir)
 
 			if math.abs(dir.x) > math.abs(dir.z) then
 			be_free.x = p1.x + (dir.x / math.abs(dir.x))
@@ -99,15 +99,15 @@ local desc = {
 
 		-- be_free is the cube that the pillow will extend into.
 		-- Don't let it be set inside a solid object.
-		local nod = minetest.get_node_or_nil(be_free)
+		local nod = core.get_node_or_nil(be_free)
 		if not nod
 		or not nod.name
-		or not minetest.registered_nodes[nod.name]
-		or minetest.registered_nodes[nod.name].walkable == true then
+		or not core.registered_nodes[nod.name]
+		or core.registered_nodes[nod.name].walkable == true then
 		return
 		end
 
-		return minetest.item_place(itemstack, placer, pointed_thing, param2)
+		return core.item_place(itemstack, placer, pointed_thing, param2)
 	end,
 }
 -- another copy of the description table, for the reversed pillow
@@ -116,12 +116,12 @@ desc2.tiles[1] = 'body_pillow_02.png'
 desc2.groups.not_in_creative_inventory = 1
 
 -- side one
-minetest.register_node('body_pillow:body_pillow', desc)
+core.register_node('body_pillow:body_pillow', desc)
 -- side two
-minetest.register_node('body_pillow:body_pillow_reversed', desc2)
+core.register_node('body_pillow:body_pillow_reversed', desc2)
 
 -- register recipe
-minetest.register_craft({
+core.register_craft({
 	output = 'body_pillow:body_pillow',
 	recipe = {
 		{"", "wool:white", ""},
